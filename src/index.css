@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600;700;800&family=Parisienne&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color: #201511;
+  background: #fff8eb;
+  font-synthesis: none;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  position: relative;
+  scroll-behavior: smooth;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  min-width: 320px;
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at 13% 8%, rgba(199, 154, 87, 0.18), transparent 26rem),
+    radial-gradient(circle at 88% 20%, rgba(87, 48, 24, 0.16), transparent 28rem),
+    #fff8eb;
+  font-family: Montserrat, Inter, system-ui, sans-serif;
+}
+
+button,
+a,
+input,
+textarea {
+  font: inherit;
+}
+
+::selection {
+  background: rgba(199, 154, 87, 0.38);
+  color: #130804;
+}
+
+.premium-container {
+  width: min(1180px, calc(100% - 32px));
+  margin-inline: auto;
+}
+
+.glass-panel {
+  border: 1px solid rgba(255, 248, 235, 0.18);
+  background: linear-gradient(145deg, rgba(32, 21, 17, 0.62), rgba(19, 8, 4, 0.34));
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(18px);
+}
+
+.gold-line {
+  position: relative;
+}
+
+.gold-line::after {
+  position: absolute;
+  left: 50%;
+  bottom: -14px;
+  width: 92px;
+  height: 1px;
+  content: '';
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, transparent, #c79a57, transparent);
+}
+
+.drink-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(199, 154, 87, 0.18);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.76), rgba(255, 248, 235, 0.92)),
+    repeating-linear-gradient(0deg, rgba(87, 48, 24, 0.035) 0, rgba(87, 48, 24, 0.035) 1px, transparent 1px, transparent 6px);
+  box-shadow: 0 18px 55px rgba(46, 27, 15, 0.12);
+}
+
+.drink-card::before {
+  position: absolute;
+  inset: 0;
+  content: '';
+  opacity: 0;
+  transition: opacity 320ms ease;
+  box-shadow: inset 0 0 0 1px rgba(199, 154, 87, 0.62), 0 0 42px rgba(199, 154, 87, 0.24);
+  pointer-events: none;
+}
+
+.drink-card:hover::before {
+  opacity: 1;
+}
+
+.drink-card:hover .drink-image {
+  transform: rotate(2.4deg) scale(1.08);
+}
+
+.drink-image {
+  transition: transform 520ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.paper-texture {
+  background:
+    linear-gradient(105deg, rgba(255, 255, 255, 0.6), transparent 36%),
+    radial-gradient(circle at 18% 12%, rgba(199, 154, 87, 0.14), transparent 13rem),
+    repeating-linear-gradient(0deg, rgba(87, 48, 24, 0.035) 0, rgba(87, 48, 24, 0.035) 1px, transparent 1px, transparent 7px),
+    #fff8eb;
+}
+
+.book-frame {
+  perspective: 1700px;
+  transform-style: preserve-3d;
+}
+
+.book-page {
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  transform-origin: left center;
+}
+
+.book-page::after {
+  position: absolute;
+  inset: 10px 0 10px auto;
+  width: 16px;
+  content: '';
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(53, 28, 16, 0.1), transparent);
+  pointer-events: none;
+}
+
+.book-spine {
+  background:
+    linear-gradient(90deg, rgba(19, 8, 4, 0.5), transparent 28%),
+    linear-gradient(180deg, #4a2a18, #1f1009);
+}
+
+.floating-bean {
+  filter: drop-shadow(0 18px 22px rgba(0, 0, 0, 0.22));
+}
+
+.soft-blur {
+  position: absolute;
+  pointer-events: none;
+  border-radius: 999px;
+  filter: blur(26px);
+  opacity: 0.24;
+}
+
+.map-grid {
+  background:
+    linear-gradient(rgba(255, 248, 235, 0.7), rgba(255, 248, 235, 0.7)),
+    linear-gradient(90deg, rgba(87, 48, 24, 0.14) 1px, transparent 1px),
+    linear-gradient(rgba(87, 48, 24, 0.14) 1px, transparent 1px);
+  background-size: auto, 34px 34px, 34px 34px;
+}
+
+@media (max-width: 767px) {
+  .premium-container {
+    width: min(100% - 22px, 1180px);
+  }
+}
